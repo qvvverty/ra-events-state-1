@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function ProjectList(props) {
   const { projects } = props;
   let projectKey = 0;
@@ -11,4 +13,11 @@ export default function ProjectList(props) {
       }
     </div>
   );
+}
+
+ProjectList.propTypes = {
+  projects: PropTypes.arrayOf(PropTypes.shape({
+    img: PropTypes.string,
+    category: PropTypes.string
+  }))
 }
